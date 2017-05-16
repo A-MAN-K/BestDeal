@@ -1,0 +1,212 @@
+package com.iit.cs;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class ReviewServlet extends HttpServlet {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		PrintWriter out = response.getWriter();
+		
+		String productName = request.getParameter("productName");
+		String productId   = request.getParameter("productId");
+		String retailer	   = request.getParameter("retailer");
+		String price	   = request.getParameter("price");
+		String category    = request.getParameter("category");
+
+		//HTML code chunk part 1 starts here
+		out.println("<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>");
+		out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+		out.println("<head>");
+		out.println("<title>Best Deal Website</title>");
+		out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />");
+		out.println("<link href=\"style.css\" rel=\"stylesheet\" type=\"text/css\" />");
+		out.println("</head>");
+		out.println("<body bgcolor=\"#550403\" style=\"leftmargin=0px; topmargin=0px; marginwidth=0px; marginheight=0px;\">");
+		out.println("<span class=\"style6\"></span>");
+		out.println("<div id=\"body\">");
+		out.println("<br />");
+		out.println("<br />");
+		out.println("<br />");
+		out.println("<table style=\"width=1001px; height=1001px;\" border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" id=\"Table_01\">");
+		out.println("<tr>");
+		out.println("<td colspan=\"2\" rowspan=\"3\"><div id=\"logo\">");
+		out.println("<div class=\"logo\"><a href=\"index.html\"><span class=\"style5\">BEST<br />");
+		out.println("DEAL</span></a></div>");
+		out.println("</div></td>");
+		out.println("<td colspan=\"3\"><div class=\"style1\" id=\"header\">");
+		out.println("<br />");
+		out.println("ONLINE <span class=\"style3\">SHOPPING</span>");
+        out.println("<span class=\"style4\"><br />");
+        out.println("OUR SERVICES MAKES YOUR SHOPPING BETTER!</span></div></td>");
+	    out.println("<td>");
+		out.println(" <img src=\"images/spacer.gif\" width=\"1\" height=\"185\" alt=\"\" /></td>");
+		out.println("</tr>");
+		out.println("<tr>");
+		out.println("<td><div class=\"top_menu\">");
+		out.println("<ul>");
+		out.println("<li><a href=\"index.html\">HOME</a></li>");
+        out.println("<li><a href=\"signUp.html\">SIGN IN</a></li>");
+        out.println("<li><a href=\"index.html\">PRODUCTS</a></li>");
+        out.println("</ul>");
+        out.println("</div></td>");
+	    out.println("<td colspan=\"2\">");
+	    out.println("<img src=\"images/index_04.jpg\" width=\"128\" height=\"42\" alt=\"\" /></td>");
+	    out.println("<td>");
+	    out.println("<img src=\"images/spacer.gif\" width=\"1\" height=\"42\" alt=\"\" /></td>");
+	    out.println("</tr>");
+	    out.println("<tr>");
+	    out.println("<td colspan=\"2\" rowspan=\"2\"><div id=\"content\">");
+	    out.println("<div class=\"title\"></div>");
+  	    out.println("<div class=\" content\">");
+  	//HTML code chunk part 1 ends here
+
+  	  out.println("<form  action='SubmitReviews'>");
+  	out.println("<h2>SUBMIT REVIEW</h2>");
+  	out.println("<table>");
+  	out.println("<tr>");
+  	out.println("<td>Product Model Name</td>");
+  	out.println("<td><input type='text' readonly height='20' width='30' name='productName' value='"+productName+"'"+"></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Product Category</td>");
+  	out.println("<td> <input type='text' readonly name='productCategory'value='"+category+"'"+"></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Product Price</td>");
+  	out.println("<td> <input type='text' readonly name='productPrice' value='"+price+"'"+"></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Retailer Name</td>");
+  	out.println("<td> <input type='text' readonly name='retailerName' value='"+retailer+"'"+"></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Retailer City</td>");
+  	out.println("<td> <input type='text' name='retailerCity'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Retailer State</td>");
+  	out.println("<td> <input type='text' name='retailerState'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Retailer Zip</td>");
+  	out.println("<td> <input type='text' name='retailerZip'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> ProductOnSale</td>");
+  	out.println("<td> <input type='text' name='productOnSale'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> ManufacturerName</td>");
+  	out.println("<td> <input type='text' name='manufacturerName'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> ManufacturerRebate</td>");
+  	out.println("<td> <input type='text' name='rebateAvailable'></td>");
+  	out.println("</tr>");
+  	out.println("");
+  	out.println("<tr>");
+  	out.println("<td> Username</td>");
+  	out.println("<td> <input type='text' name='userName'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> User Age</td>");
+  	out.println("<td> <input type='text' name='userAge'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> User gender</td>");
+  	out.println("<td> <select name='gender'>");
+  	out.println("<option>Male");
+  	out.println("</option>");
+  	out.println("<option>Female");
+  	out.println("</option>");
+  	out.println("</select>");
+  	out.println("</td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> User Occupation</td>");
+  	out.println("<td> <input type='text' name='userOccupation'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Review Rating</td>");
+  	out.println("<td> <input type='text' name='reviewRating'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Review Date</td>");
+  	out.println("<td> <input type='text' name='reviewDate'></td>");
+  	out.println("</tr>");
+  	out.println("<tr>");
+  	out.println("<td> Review Text</td>");
+  	out.println("<td> <textarea rows='4' cols='50' name='reviewText'></textarea></td>");
+  	out.println("</tr>");
+  	out.println("");
+  	out.println("<tr><td> <input type='submit' value='Submit'></td> </tr>");
+  	out.println("</table>");
+  	out.println("</form>");
+  	out.println("");
+  	    
+  	    
+  	    
+  	    
+  	    //HTML code chunk part 2 starts here
+		
+		   out.println("</div>");
+           out.println("</div></td>");
+           out.println("<td rowspan=\"3\">");
+	       out.println("<img src=\"images/index_06.jpg\" width=\"27\" height=\"773\" alt=\"\" /></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"1\" height=\"76\" alt=\"\" /></td>");
+	       out.println(" </tr>");
+	       out.println("<tr>");
+	       out.println("<td rowspan=\"2\"><img src=\"images/index_07.jpg\" width=\"70\" height=\"697\" alt=\"\"/></td>");
+	       out.println("<td><div class=\"left_menu\">");
+	       out.println(" <ul>");
+	       out.println(" <li><a href=\"index.html\">HOME</a></li>");
+	       out.println("<li><a href=\"MyServlet\">LAPTOPS</a></li>");
+	       out.println("<li><a href=\"index.html\">MOBILE PHONES</a></li>");
+	       out.println("<li><a href=\"index.html\">TABLETS</a></li>");
+	       out.println(" <li><a href=\"index.html\">TELEVISION</a></li>");
+	       out.println("</ul>");
+	       out.println("</div></td>");
+	       out.println("<td>");
+	       out.println(" <img src=\"images/spacer.gif\" width=\"1\" height=\"651\" alt=\"\" /></td>");
+	       out.println("</tr>");
+	       out.println("<tr>");
+	       out.println("<td colspan=\"3\"><div id=\"footer\">COPYRIGHT (C) 2010 &quot;YOUR SITE&quot;. DESIGN BY <a href=\"http://www.merkkleding-outlet.nl\">merkkleding online</a></div></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"1\" height=\"46\" alt=\"\" /></td>");
+	       out.println("</tr>");
+	       out.println("<tr>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"70\" height=\"1\" alt=\"\" /></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"179\" height=\"1\" alt=\"\" /></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"623\" height=\"1\" alt=\"\" /></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"101\" height=\"1\" alt=\"\" /></td>");
+	       out.println("<td>");
+	       out.println("<img src=\"images/spacer.gif\" width=\"27\" height=\"1\" alt=\"\" /></td");
+	       out.println("<td></td>");
+	       out.println("</tr>");
+	       out.println("</table>");
+	       out.println("<div id=\"lft\"><a href=\"http://www.merkkleding-outlet.nl\">merkkleding online</a></div><br />");
+	       out.println("<br />");
+	       out.println("</div>");
+	       out.println("<!-- End Save for Web Slices -->");
+	       out.println("</body>");
+	       out.println("</html>");
+	       
+	     //HTML code chunk part 2 ends here
+
+  	    
+	}
+
+}

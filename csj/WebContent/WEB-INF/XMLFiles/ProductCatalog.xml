@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ProductCatalog>
+    <laptop id="LAP1" retailer="Apple">
+        <image>xbox1.jpg</image>
+        <name>MACBOOK</name>
+        <condition>New</condition>
+        <price>399</price>
+        <accessories>
+            <accessory>Wireless Keyboard</accessory>
+            <accessory>Headphone</accessory>
+        </accessories>
+    </laptop>
+    <laptop id="LAP2" retailer="Dell">
+        <image>xbox360.jpg</image>
+        <name>STUDIO</name>
+        <condition>Refurbished</condition>
+        <price>299</price>
+        <accessories>
+            <accessory>MOUSE</accessory>
+            <accessory>Wireless Adapter</accessory>
+        </accessories>
+    </laptop>
+    <laptop id="LAP3" retailer="HP">
+        <image>Hewlett Packard.jpg</image>
+        <name>HP1503</name>
+        <condition>New</condition>
+        <price>600</price>
+        <accessories>
+        	<accessory>Head Set</accessory>
+            <accessory>MOUSE</accessory>
+            <accessory>Wireless Adapter</accessory>
+        </accessories>
+    </laptop>
+    <mobile id="MOB1" retailer="Samsung">
+        <mobimage>sam1.jpg</mobimage>
+        <mobname>Galaxy</mobname>
+        <mobcondition>New</mobcondition>
+        <mobprice>399</mobprice>
+        <mobaccessories>
+            <mobaccessory>Earphones</mobaccessory>
+            <mobaccessory>Power Bank</mobaccessory>
+        </mobaccessories>
+    </mobile>
+    <mobile id="MOB2" retailer="Apple">
+        <mobimage>iPhone.jpg</mobimage>
+        <mobname>iPhone 7</mobname>
+        <mobcondition>New</mobcondition>
+        <mobprice>799</mobprice>
+        <mobaccessories>
+            <mobaccessory>Earphone</mobaccessory>
+            <mobaccessory>Screen Guard</mobaccessory>
+        </mobaccessories>
+    </mobile>
+    <mobile id="MOB3" retailer="Nokia">
+        <mobimage>Nokia.jpg</mobimage>
+        <mobname>N63</mobname>
+        <mobcondition>Refurbished</mobcondition>
+        <mobprice>200</mobprice>
+        <mobaccessories>
+            <mobaccessory>Earphone</mobaccessory>
+            <mobaccessory>Screen Guard</mobaccessory>
+            <mobaccessory>Charger</mobaccessory>
+            <mobaccessory>Back Cover</mobaccessory>
+        </mobaccessories>
+    </mobile>
+	<mobile id="MOB4" retailer="Nokia">
+        <mobimage>Nokia.jpg</mobimage>
+        <mobname>N95</mobname>
+        <mobcondition>Refurbished</mobcondition>
+        <mobprice>150</mobprice>
+        <mobaccessories>
+            <mobaccessory>Earphone</mobaccessory>
+            <mobaccessory>Screen Cover</mobaccessory>
+            <mobaccessory>Charger</mobaccessory>
+            <mobaccessory>Back Cover</mobaccessory>
+        </mobaccessories>
+    </mobile>
+	    
+    
+ </ProductCatalog>
